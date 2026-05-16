@@ -1,0 +1,117 @@
+.products-page {
+  width: 100%;
+}
+
+.products-page__hero {
+  border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(
+      circle at 20% 20%,
+      color-mix(in srgb, var(--color-primary) 18%, transparent),
+      transparent 45%
+    ),
+    var(--color-bg);
+}
+
+.products-page__hero-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1.5rem;
+}
+
+.products-page__title {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  letter-spacing: -0.03em;
+}
+
+.products-page__lead {
+  margin: 0.65rem 0 0;
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.products-page__bar {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0.25rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.products-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cat-pill {
+  border-radius: 999px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  padding: 0.45rem 0.75rem;
+  font-weight: 650;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.cat-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.cat-pill.is-active {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+  background: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+.products-page__search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+}
+
+.products-page__input {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.75rem 0.85rem;
+  font-size: 0.95rem;
+}
+
+.products-page__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.products-page__content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 3rem;
+}
+
+.products-page__state {
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border-strong);
+  padding: 1.25rem;
+  color: var(--color-text-muted);
+  font-weight: 650;
+}
+
+.products-page__state--error {
+  border-style: solid;
+  border-color: rgba(220, 38, 38, 0.35);
+  color: var(--color-danger);
+  background: rgba(220, 38, 38, 0.06);
+}
+
+@media (max-width: 640px) {
+  .products-page__search {
+    grid-template-columns: 1fr;
+  }
+}
