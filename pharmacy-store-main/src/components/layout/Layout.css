@@ -1,0 +1,125 @@
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+}
+
+.search-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.search-overlay__panel {
+  position: relative;
+  max-width: 720px;
+  margin: 10vh auto 0;
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-lg);
+}
+
+.search-overlay__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.search-overlay__title {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.search-overlay__close {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.search-overlay__close:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.search-overlay__form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+}
+
+.search-overlay__input {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.85rem 0.95rem;
+  font-size: 1rem;
+}
+
+.search-overlay__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.search-overlay__submit {
+  border-radius: var(--radius-md);
+  border: none;
+  padding: 0 1.1rem;
+  font-weight: 750;
+  cursor: pointer;
+  color: #042f2e;
+  background: linear-gradient(135deg, var(--color-primary), #0d9488);
+}
+
+.search-overlay__submit:hover {
+  filter: brightness(1.03);
+}
+
+.search-overlay__hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+}
+
+.search-overlay__hint kbd {
+  font-family: inherit;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg);
+}
+
+@media (max-width: 640px) {
+  .search-overlay__form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-overlay__panel {
+    margin: 6vh 1rem 0;
+  }
+}
